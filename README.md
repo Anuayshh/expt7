@@ -28,11 +28,13 @@ upload = files.upload()
 df = pd.read_csv('titanic_dataset.csv')
 df
 ```
-![image](https://github.com/Vaish-1011/ODD2023-Datascience-Ex-07/assets/135130074/01969cd4-b742-433c-8706-bf0ec799b83b)
+![image](https://github.com/Anuayshh/expt7/assets/127651217/e3ae46da-ab1d-4c34-91ab-94c56aed7963)
+
 ```
 df.isnull().sum()
 ```
-![image](https://github.com/Vaish-1011/ODD2023-Datascience-Ex-07/assets/135130074/7f363e8c-bb33-4b26-b606-22ae262fab68)
+![image](https://github.com/Anuayshh/expt7/assets/127651217/d7983870-1d4e-41d6-afa5-9963af473680)
+
 ```
 df.drop(['PassengerId', 'Name', 'Ticket', 'Cabin'], axis=1, inplace=True)
 from sklearn.preprocessing import LabelEncoder
@@ -49,23 +51,24 @@ selector = SelectKBest(chi2, k=3)
 X_new = selector.fit_transform(X, y)
 print(X_new)
 ```
-![image](https://github.com/Vaish-1011/ODD2023-Datascience-Ex-07/assets/135130074/d193b9b5-a309-4b18-a365-41bf6c81460b)
+![image](https://github.com/Anuayshh/expt7/assets/127651217/00ab032c-503a-4029-8134-09bec5b1ec05)
+
 ```
 df_new = pd.DataFrame(X_new, columns=['Pclass', 'Age', 'Fare'])
 df_new['Survived'] = y.values
 df_new.to_csv('titanic_transformed.csv', index=False)
 print(df_new)
 ```
-![image](https://github.com/Vaish-1011/ODD2023-Datascience-Ex-07/assets/135130074/9dc9581e-8ad5-4e62-8515-a74da6adea88)
+![image](https://github.com/Anuayshh/expt7/assets/127651217/bb9ad2f8-1141-44fb-a9bb-3f40697e3857)
 
-## CarPrice.csv:
 ```
 from google.colab import files
 uploaded = files.upload()
 df = pd.read_csv("CarPrice.csv")
 df
 ```
-![image](https://github.com/Vaish-1011/ODD2023-Datascience-Ex-07/assets/135130074/b2580cae-f9a2-4e1a-aad0-8ede5ce88a54)
+![image](https://github.com/Anuayshh/expt7/assets/127651217/24c2c2fa-7f57-4249-bfd2-e1261b285bf3)
+
 ```
 df = df.drop(['car_ID', 'CarName'], axis=1)
 from sklearn.preprocessing import LabelEncoder
